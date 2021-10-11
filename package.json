@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/jordanvillacorta/hr-rfe5-mvp#readme",
   "dependencies": {
+    "@babel/node": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "axios": "^0.22.0",

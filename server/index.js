@@ -6,11 +6,11 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
-app.get('/hey', (req, res) => {
+app.get('/meals', (req, res) => {
   res.send('Hello World!')
 })
 
-app.post('/', function (req, res) {
+app.post('/meals', function (req, res) {
   res.send('Got a POST request')
 })
 

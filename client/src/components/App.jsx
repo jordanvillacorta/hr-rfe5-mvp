@@ -1,34 +1,53 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import MealTypes from './MealTypes.jsx';
-import MealList from './MealList.jsx';
-import RecipeList from './RecipeList.jsx';
+import React from "react";
+import axios from "axios";
+import MealTypes from "./MealTypes.jsx";
+import MealList from "./MealList.jsx";
+import RecipeList from "./RecipeList.jsx";
 
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mealType: "none",
+      mealList: [],
+      recipeList: [],
+      submitted: false,
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-const App = (props) => {
-  // const mealState = {
-  //   mealType: '',
-  //   mealList: [],
-  //   recipeList: []
-  // };
-  const [mealChoice, setMealChoice] = useState('none');
-  const [mealList, setMealList] = useState([]);
-  const [recipeList, setRecipeList] = useState([]);
+  handleChange = (e) => {
+    let newMealType = e.target.value;
+    this.setState({
+      mealType: newMealType,
+    });
+  };
 
-  // console.log(mealState.mealList);
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      submitted: true,
+    });
+  };
 
-  useEffect(() => {
-    console.log('rendering')
-  }, [mealChoice])
-
-  return (
-    <div id="meal-planner-container">
-      <h1 id="meal-planner-title">Plan Your Meals!</h1>
-      <MealTypes meal={choice => setMealChoice(choice)} />
-      <MealList />
-      <RecipeList />
-    </div>
-  );
+  render() {
+    return (
+      <div id="meal-planner-container">
+        <h1 id="meal-planner-title">Plan Your Meals!</h1>
+        <MealTypes
+          mealType={this.state.mealType}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+        {this.state.submitted && <div className="meal-planner-choice">
+          You chose {this.state.mealType}!
+        </div>}
+        <MealList mealChoice={(meal) => setMealList(meal)} />
+        <RecipeList />
+      </div>
+    );
+  }
 }
 
 export default App;

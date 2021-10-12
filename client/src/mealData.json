@@ -1,7 +1,7 @@
 [
   {
       "name": "Crock Pot Roast",
-      "mealType": "breakfast",
+      "mealType": "dinner",
       "ingredients": [
           {
               "quantity": "1",
@@ -46,6 +46,7 @@
   },
   {
       "name": "Roasted Asparagus",
+      "mealType": "dinner",
       "ingredients": [
           {
               "quantity": "1 lb",
@@ -92,6 +93,7 @@
   },
   {
       "name": "Curried Lentils and Rice",
+      "mealType": "lunch",
       "ingredients": [
           {
               "quantity": "1 quart",
@@ -137,6 +139,7 @@
   },
   {
       "name": "Big Night Pizza",
+      "mealType": "dinner",
       "ingredients": [
           {
               "quantity": "5 teaspoons",
@@ -201,6 +204,7 @@
   },
   {
       "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
+      "mealType": "lunch",
       "ingredients": [
           {
               "quantity": "2",
@@ -258,6 +262,7 @@
   },
   {
       "name": "Mic's Yorkshire Puds",
+      "mealType": "breakfast",
       "ingredients": [
           {
               "quantity": "200g",
@@ -307,6 +312,7 @@
   },
   {
       "name": "Old-Fashioned Oatmeal Cookies",
+      "mealType": "dessert",
       "ingredients": [
           {
               "quantity": "1 cup",
@@ -398,6 +404,7 @@
   },
   {
       "name": "Blueberry Oatmeal Squares",
+      "mealType": "breakfast",
       "ingredients": [
           {
               "quantity": "2-1/2 cups",
@@ -475,6 +482,7 @@
   },
   {
       "name": "Curried chicken salad",
+      "mealType": "lunch",
       "ingredients": [
           {
               "quantity": "3",

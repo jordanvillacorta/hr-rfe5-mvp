@@ -4,10 +4,12 @@ const MealTypes = (props) => {
 
   return (
     <div id="meal-selection">
+      <h2>Meal Choices:</h2>
       <form id="meal-selection-form">
         <label>
           <span className="pick-your-meal">Pick your meal:</span>
-          <select>
+          <select id="meal-selection-button">
+            <option value="none">I'm feeling...</option>
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
             <option value="dinner">Dinner</option>

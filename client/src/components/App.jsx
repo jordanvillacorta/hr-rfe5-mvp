@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import MealTypes from './MealTypes.jsx';
+import MealList from './MealList.jsx';
+import RecipeList from './RecipeList.jsx';
+
 
 const App = (props) => {
   const mealState = {
@@ -16,8 +19,10 @@ const App = (props) => {
 
   return (
     <div id="meal-planner-container">
-      <h1>Plan Your Meals!</h1>
+      <h1 id="meal-planner-title">Plan Your Meals!</h1>
       <MealTypes />
+      <MealList />
+      <RecipeList />
     </div>
   );
 }

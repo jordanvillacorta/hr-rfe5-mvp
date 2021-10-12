@@ -1,6 +1,7 @@
 [
   {
       "name": "Crock Pot Roast",
+      "mealType": "breakfast",
       "ingredients": [
           {
               "quantity": "1",

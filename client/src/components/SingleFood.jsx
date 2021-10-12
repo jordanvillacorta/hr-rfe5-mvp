@@ -1,5 +1,5 @@
-import React from 'react';
-import '../../dist/styles.css';
+import React from "react";
+import "../../dist/styles.css";
 
 class SingleFood extends React.Component {
   constructor(props) {
@@ -10,33 +10,33 @@ class SingleFood extends React.Component {
       isLunch: false,
       isDinner: false,
       isDessert: false,
-      foodList: []
-    }
+      foodList: [],
+    };
     this.handleMealType = this.handleMealType.bind(this);
   }
 
   handleMealType = () => {
-    if (this.state.allFoodTypes === 'breakfast') {
+    if (this.state.allFoodTypes === "breakfast") {
       this.setState({
-        isBreakfast: true
+        isBreakfast: true,
       });
     }
-    if (this.state.allFoodTypes === 'lunch') {
+    if (this.state.allFoodTypes === "lunch") {
       this.setState({
-        isLunch: true
+        isLunch: true,
       });
     }
-    if (this.state.allFoodTypes === 'dinner') {
+    if (this.state.allFoodTypes === "dinner") {
       this.setState({
-        isDinner: true
+        isDinner: true,
       });
     }
-    if (this.state.allFoodTypes === 'dessert') {
+    if (this.state.allFoodTypes === "dessert") {
       this.setState({
-        isDessert: true
+        isDessert: true,
       });
     }
-  }
+  };
 
   render() {
     let singleFood = this.props.singleFood;
@@ -45,34 +45,23 @@ class SingleFood extends React.Component {
       <div id="single-food-item">
         <div className="single-food-item-name">
           Name:
-          {this.state.isBreakfast && (
-            <div id="breakfast-food-item">
-              {singleFood.name}
-            </div>
-          )}
+          {/* {this.state.isBreakfast && ( */}
+            <div id="breakfast-food-item">{singleFood.name}</div>
+          {/* )} */}
         </div>
         <div className="single-food-item-imageURL">
           Image:
           {/* {this.state.isBreakfast && ( */}
-            <div id="breakfast-food-item">
-              {singleFood.imageURL}
-            </div>
+          <div id="breakfast-food-item">
+            <img src={singleFood.imageURL} className="image-url" />
+          </div>
           {/* )} */}
         </div>
-        <div className="single-food-item-originalURL">
-          Original:
-          {/* {this.state.isBreakfast && ( */}
-            <div id="breakfast-food-item">
-              {singleFood.originalURL}
-            </div>
-          {/* )} */}
-        </div>
-        <button
-          className="submit-btn"
-          type="submit"
-          >Select!
+        <button className="submit-btn" type="submit">
+          Select!
         </button>
-      </div>);
+      </div>
+    );
   }
 }
 

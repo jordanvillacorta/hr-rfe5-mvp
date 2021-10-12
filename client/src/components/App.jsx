@@ -14,18 +14,18 @@ class App extends React.Component {
       recipeList: [],
       submitted: false,
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleMealTypeChange = this.handleMealTypeChange.bind(this);
+    this.handleMealTypeSubmit = this.handleMealTypeSubmit.bind(this);
   }
 
-  handleChange = (e) => {
+  handleMealTypeChange = (e) => {
     let newMealType = e.target.value;
     this.setState({
       mealType: newMealType,
     });
   };
 
-  handleSubmit = (e) => {
+  handleMealTypeSubmit = (e) => {
     e.preventDefault();
     this.setState({
       submitted: true,
@@ -35,22 +35,26 @@ class App extends React.Component {
   render() {
     return (
       <div id="meal-planner-container">
-        <h1 id="meal-planner-title">Plan Your Meals!</h1>
-        <MealTypes
-          mealType={this.state.mealType}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
-        {this.state.submitted && (
-          <div className="meal-planner-choice">
-            {this.state.mealType} is a great choice!
-          </div>
-        )}
+        {/* <h1 id="meal-planner-title">Plan Your Meals!</h1> */}
+        <div id="meal-planner-types">
+          <MealTypes
+            mealType={this.state.mealType}
+            handleChange={this.handleMealTypeChange}
+            handleSubmit={this.handleMealTypeSubmit}
+          />
+          {this.state.submitted && (
+            <div className="meal-planner-choice">
+              {this.state.mealType} is a great choice!
+            </div>
+          )}
+        </div>
         {(this.state.submitted && this.state.mealType !== "none") && (
         <div id="meal-planner-meal-list">
           <MealList mealType={this.state.mealType} />
         </div>)}
-        <RecipeList />
+        <div id="meal-planner-recipe-list">
+          <RecipeList mealList={this.state.mealList} />
+        </div>
       </div>
     );
   }

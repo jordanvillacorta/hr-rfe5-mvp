@@ -24,8 +24,7 @@ class MealList extends React.Component {
     for (let i = 0; i < mealData.length; i++) {
       if (mealData[i].mealType === 'breakfast') {
         this.setState({
-          isBreakfast: true,
-          selectedFoods: mealData[i]
+          isBreakfast: true
         })
       }
       console.log(this.state.selectedFoods);

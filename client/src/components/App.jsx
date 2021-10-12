@@ -42,7 +42,7 @@ class App extends React.Component {
         />
         {this.state.submitted && (
           <div className="meal-planner-choice">
-            You chose {this.state.mealType}!
+            {this.state.mealType} is a great choice!
           </div>
         )}
         {(this.state.submitted && this.state.mealType !== "none") && (

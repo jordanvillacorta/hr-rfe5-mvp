@@ -1,0 +1,52 @@
+/* App */
+#meal-planner-container {
+  display: flex;
+  justify-content: center;
+}
+
+#meal-planner-container > div {
+  margin: 10px;
+  background-color: lightgrey;
+}
+
+#meal-planner-title {
+  display: flex;
+  justify-content: center;
+}
+
+#meal-planner-types {
+  background-color: lightgrey;
+  width: 500px;
+  border: 1px solid black;
+}
+
+#meal-planner-meal-list {
+  background-color: lightgrey;
+  width: 600px;
+}
+
+#meal-planner-recipe-list {
+  background-color: lightgrey;
+  width: 500px;
+  border: 1px solid black;
+}
+
+
+/* Meal Types */
+
+/* Meal List */
+#food-list-container {
+  border: 1px solid black;
+}
+
+/* Single Food */
+#single-food-item {
+  padding-bottom: 5px;
+  border: 1px solid black;
+}
+
+.image-url {
+  height: 40%;
+  width: 24%;
+  object-fit: fill;
+}

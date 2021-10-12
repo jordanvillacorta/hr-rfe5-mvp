@@ -1,6 +1,7 @@
 import React from 'react';
 import SingleFood from './SingleFood.jsx';
 import mealData from '../mealData.json';
+import '../../dist/styles.css';
 
 class MealList extends React.Component {
   constructor(props) {
@@ -20,20 +21,20 @@ class MealList extends React.Component {
     return this.state.keyIndex += 1;
   }
 
-  handleData = () => {
-    for (let i = 0; i < mealData.length; i++) {
-      if (mealData[i].mealType === 'breakfast') {
-        this.setState({
-          isBreakfast: true
-        })
-      }
-      console.log(this.state.selectedFoods);
-    }
-  }
+  // handleData = () => {
+  //   for (let i = 0; i < mealData.length; i++) {
+  //     if (mealData[i].mealType === 'breakfast') {
+  //       this.setState({
+  //         isBreakfast: true
+  //       })
+  //     }
+  //     console.log(this.state.selectedFoods);
+  //   }
+  // }
 
   render() {
     return (
-      <div>
+      <div id="food-list-container">
         <h2>Food List</h2>
         {this.state.selectedFoods.map((singleFood) => {
           return (
@@ -43,11 +44,6 @@ class MealList extends React.Component {
             />
           )
         })}
-        <button
-          className="submit-btn"
-          type="submit"
-          >Select!
-        </button>
       </div>
     );
   }

@@ -3,6 +3,7 @@ import axios from "axios";
 import MealTypes from "./MealTypes.jsx";
 import MealList from "./MealList.jsx";
 import RecipeList from "./RecipeList.jsx";
+import '../../dist/styles.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class App extends React.Component {
         )}
         {(this.state.submitted && this.state.mealType !== "none") && (
         <div id="meal-planner-meal-list">
-          <MealList />
+          <MealList mealType={this.state.mealType} />
         </div>)}
         <RecipeList />
       </div>

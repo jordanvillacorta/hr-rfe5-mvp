@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react';
 
-const MealTypes = (props) => {
+const MealTypes = ({ meal }) => {
+  const [mealType, setMealType] = useState('');
+
+  const handleChange = (e) => {
+    setMealType(e.target.value)
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    meal(mealType)
+  }
 
   return (
     <div id="meal-selection">
       <h2>Meal Choices:</h2>
-      <form id="meal-selection-form">
+      <form id="meal-selection-form" onClick={handleClick}>
         <label>
           <span className="pick-your-meal">Pick your meal:</span>
-          <select id="meal-selection-button">
+          <select id="meal-selection-button" onChange={handleChange}>
             <option value="none">I'm feeling...</option>
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>

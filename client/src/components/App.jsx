@@ -40,10 +40,15 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        {this.state.submitted && <div className="meal-planner-choice">
-          You chose {this.state.mealType}!
-        </div>}
-        <MealList mealChoice={(meal) => setMealList(meal)} />
+        {this.state.submitted && (
+          <div className="meal-planner-choice">
+            You chose {this.state.mealType}!
+          </div>
+        )}
+        {(this.state.submitted && this.state.mealType !== "none") && (
+        <div id="meal-planner-meal-list">
+          <MealList />
+        </div>)}
         <RecipeList />
       </div>
     );

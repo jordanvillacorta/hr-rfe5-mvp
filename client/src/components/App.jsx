@@ -11,13 +11,15 @@ const App = (props) => {
   //   mealList: [],
   //   recipeList: []
   // };
-  const [mealChoice, setMealChoice] = useState('');
+  const [mealChoice, setMealChoice] = useState('none');
   const [mealList, setMealList] = useState([]);
   const [recipeList, setRecipeList] = useState([]);
 
   // console.log(mealState.mealList);
 
-
+  useEffect(() => {
+    console.log('rendering')
+  }, [mealChoice])
 
   return (
     <div id="meal-planner-container">

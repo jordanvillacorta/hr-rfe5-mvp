@@ -1,8 +1,22 @@
 import React from 'react';
+import axios from "axios";
 
-const RecipeList = (props) => {
+class RecipeList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipeList: []
+    };
+  }
 
-  return (<h2>RECIPE LIST HERE</h2>);
+  render() {
+    return (
+      <div>
+        <h2>RECIPE LIST HERE</h2>
+        {this.state.recipeList}
+      </div>
+    );
+  }
 }
 
 export default RecipeList;

@@ -12,7 +12,7 @@ class RecipeList extends React.Component {
   render() {
     return (
       <div>
-        <h2>RECIPE LIST HERE</h2>
+        <h2 className="col-headers">Recipe List</h2>
         {this.state.recipeList}
       </div>
     );

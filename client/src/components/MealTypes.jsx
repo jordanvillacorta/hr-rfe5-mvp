@@ -1,9 +1,10 @@
 import React from "react";
+import '../../dist/styles.css';
 
 const MealTypes = ({ mealType, handleChange, handleSubmit }) => {
   return (
     <div id="meal-selection">
-      <h2>Meal Choices:</h2>
+      <h2 className="col-headers">Meal Choices:</h2>
       <form id="meal-selection-form" onSubmit={handleSubmit}>
         <label>
           <span className="pick-your-meal">Pick your meal:</span>
@@ -19,9 +20,6 @@ const MealTypes = ({ mealType, handleChange, handleSubmit }) => {
             <option value="Dessert">Dessert</option>
           </select>
         </label>
-        <button className="submit-btn" type="submit">
-          Yum!
-        </button>
       </form>
     </div>
   );

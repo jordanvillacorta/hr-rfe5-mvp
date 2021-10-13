@@ -25,10 +25,9 @@ class SingleFood extends React.Component {
     return (
       <div id="single-food-item">
         <div className="single-food-item-name">
-          Name: {this.props.singleFood.name}
+          {this.props.singleFood.name}
         </div>
         <div className="single-food-item-imageURL">
-          {/* Image: */}
           <div id="single-food-image">
             <img src={this.props.singleFood.imageURL} className="image-url" />
           </div>

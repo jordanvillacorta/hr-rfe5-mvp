@@ -32,10 +32,21 @@ class App extends React.Component {
     });
   };
 
+  // let newFoodItem = {
+  //   meal: this.state.mealType,
+  //   list: this.state.foodList
+  // };
+  // axios.post('/meals', newFoodItem)
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     })
+
   render() {
     return (
       <div id="meal-planner-container">
-        {/* <h1 id="meal-planner-title">Plan Your Meals!</h1> */}
         <div id="meal-planner-types">
           <MealTypes
             mealType={this.state.mealType}

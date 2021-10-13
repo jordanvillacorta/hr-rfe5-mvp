@@ -13,48 +13,122 @@ class MealList extends React.Component {
       isLunch: false,
       isDinner: false,
       isDessert: false,
-      selectedFoods: [],
+      selectedFoods: this.props.foodsList,
       filteredFoods: [],
       keyIndex: 0,
       currentFoodItem: '',
       recipeList: [],
+      didMount: true
     }
     this.getKey = this.getKey.bind(this);
-    this.test = this.test.bind(this);
+    this.foodSpecificList = this.foodSpecificList.bind(this);
+    this.breakfastFoods = this.breakfastFoods.bind(this);
+    this.lunchFoods = this.lunchFoods.bind(this);
+    this.dinnerFoods = this.dinnerFoods.bind(this);
+    this.dessertFoods = this.dessertFoods.bind(this);
     this.handleCurrentFoodItem = this.handleCurrentFoodItem.bind(this);
   }
 
-  componentDidMount() {
-    axios.get('/meals')
-      .then((response) => {
-        this.setState({
-          selectedFoods: response.data
-        })
-        this.test();
-      })
-      .catch(err => {
-        console.log('Error with rendering page:', err);
-      })
-  }
+  // componentDidMount() {
+  //   axios.get('/meals')
+  //     .then((response) => {
+  //       this.setState({
+  //         selectedFoods: response.data,
+  //         didMount: true
+  //       })
+  //       this.foodSpecificList();
+  //     })
+  //     .catch(err => {
+  //       console.log('Error with rendering page:', err);
+  //     })
+  // }
 
-  test() {
-    let filteredList = [];
-    let selectedFoods = this.state.selectedFoods;
-    for (let i = 0; i < selectedFoods.length; i++) {
-      if (selectedFoods[i].mealType === 'breakfast') {
-        filteredList.push(selectedFoods[i]);
-      } else if (selectedFoods[i].mealType === 'lunch') {
-        filteredList.push(selectedFoods[i]);
+  componentDidUpdate(prevProps) {
+    if (this.props.mealType !== prevProps.mealType) {
+      let selectedFoods = this.state.selectedFoods;
+      let breakfastList = [];
+      let lunchList = [];
+      if (this.props.mealType.toLowerCase() === 'breakfast') {
+        for (let i = 0; i < selectedFoods.length; i++) {
+          if (this.state.didMount && selectedFoods[i].mealType === 'breakfast') {
+            breakfastList.push(selectedFoods[i]);
+            this.breakfastFoods(breakfastList);
+          }
+        }
+      }
+      if (this.props.mealType.toLowerCase() === 'lunch') {
+        for (let i = 0; i < selectedFoods.length; i++) {
+          if (this.state.didMount && selectedFoods[i].mealType === 'lunch') {
+            lunchList.push(selectedFoods[i]);
+            this.lunchFoods(lunchList);
+          }
+        }
       }
       this.setState({
-        // isBreakfast: true,
-        filteredFoods: filteredList
-      });
+        currentFoodItem: 'this is working'
+      })
+      // this.foodSpecificList();
     }
-  }
+   }
 
   getKey() {
     return this.state.keyIndex += 1;
+  }
+
+  foodSpecificList() {
+    let breakfastList = [];
+    let lunchList = [];
+    let dinnerList = [];
+    let dessertList = [];
+    let selectedFoods = this.state.selectedFoods;
+    for (let i = 0; i < selectedFoods.length; i++) {
+      if (this.state.didMount && selectedFoods[i].mealType === 'breakfast') {
+        breakfastList.push(selectedFoods[i]);
+        this.breakfastFoods(breakfastList);
+      } else if (this.state.didMount && selectedFoods[i].mealType === 'lunch') {
+        this.setState({
+          isLunch: true,
+          // filteredFoods: foodList
+        });
+        // lunchList.push(selectedFoods[i]);
+        // this.lunchFoods(lunchList);
+      } else if (this.state.didMount && selectedFoods[i].mealType === 'dinner') {
+        dinnerList.push(selectedFoods[i]);
+        this.dinnerFoods(dinnerList);
+      } else if (this.state.didMount && selectedFoods[i].mealType === 'dessert') {
+        dessertList.push(selectedFoods[i]);
+        this.dessertFoods(dessertList);
+      }
+    }
+  }
+
+  breakfastFoods(foodList) {
+    this.setState({
+      // isBreakfast: true,
+      filteredFoods: foodList
+    });
+  }
+
+  lunchFoods(foodList) {
+    this.setState({
+      isLunch: true,
+      filteredFoods: foodList
+    });
+  }
+
+  dinnerFoods(dinnerList) {
+    console.log(dinnerList);
+    this.setState({
+      isDinner: true,
+      // filteredFoods: dinnerList
+    });
+  }
+
+  dessertFoods(foodList) {
+    this.setState({
+      isDessert: true,
+      // filteredFoods: foodList
+    });
   }
 
   handleCurrentFoodItem = (e) => {
@@ -79,16 +153,6 @@ class MealList extends React.Component {
             />
           )
         })}
-        {/* {this.state.selectedFoods.map((singleFood) => {
-          return (
-            <SingleFood
-              key={this.getKey()}
-              mealType={this.state.mealType}
-              singleFood={singleFood}
-              handleCurrentFood={this.handleCurrentFoodItem}
-            />
-          )
-        })} */}
       </div>
     );
   }

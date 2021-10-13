@@ -27,7 +27,6 @@ class App extends React.Component {
           selectedFoods: response.data,
           didMount: true,
         });
-        // this.foodSpecificList();
       })
       .catch((err) => {
         console.log("Error with rendering page:", err);
@@ -78,6 +77,7 @@ class App extends React.Component {
         {(this.state.submitted && this.state.didMount) && (
           <div id="meal-planner-meal-list">
             <MealList
+              didMount={this.state.didMount}
               foodsList={this.state.selectedFoods}
               mealType={this.state.mealType}
             />

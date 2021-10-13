@@ -38,16 +38,17 @@ class MealList extends React.Component {
   }
 
   test() {
-    let breakfastList = [];
+    let filteredList = [];
     let selectedFoods = this.state.selectedFoods;
     for (let i = 0; i < selectedFoods.length; i++) {
       if (selectedFoods[i].mealType === 'breakfast') {
-        breakfastList.push(selectedFoods[i]);
+        filteredList.push(selectedFoods[i]);
+      } else if (selectedFoods[i].mealType === 'lunch') {
+        filteredList.push(selectedFoods[i]);
       }
-      console.log('list', breakfastList);
       this.setState({
-        isBreakfast: true,
-        filteredFoods: breakfastList
+        // isBreakfast: true,
+        filteredFoods: filteredList
       });
     }
   }

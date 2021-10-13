@@ -8,6 +8,7 @@ class MealList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      mealId: this.props.mealId,
       mealType: this.props.mealType,
       isBreakfast: false,
       isLunch: false,
@@ -21,7 +22,6 @@ class MealList extends React.Component {
       didMount: this.props.didMount
     }
     this.getKey = this.getKey.bind(this);
-    // this.foodSpecificList = this.foodSpecificList.bind(this);
     this.breakfastFoods = this.breakfastFoods.bind(this);
     this.lunchFoods = this.lunchFoods.bind(this);
     this.dinnerFoods = this.dinnerFoods.bind(this);
@@ -30,7 +30,7 @@ class MealList extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.mealType !== prevProps.mealType) {
+    if (this.props.mealId !== prevProps.mealId) {
       let selectedFoods = this.state.selectedFoods;
       let breakfastList = [];
       let lunchList = [];
@@ -55,8 +55,8 @@ class MealList extends React.Component {
       if (this.props.mealType.toLowerCase() === 'dinner') {
         for (let i = 0; i < selectedFoods.length; i++) {
           if (this.state.didMount && selectedFoods[i].mealType === 'dinner') {
-            lunchList.push(selectedFoods[i]);
-            this.lunchFoods(lunchList);
+            dinnerList.push(selectedFoods[i]);
+            this.dinnerFoods(dinnerList);
           }
         }
       }
@@ -68,43 +68,12 @@ class MealList extends React.Component {
           }
         }
       }
-      this.setState({
-        currentFoodItem: 'this is working'
-      })
-      // this.foodSpecificList();
     }
    }
 
   getKey() {
     return this.state.keyIndex += 1;
   }
-
-  // foodSpecificList() {
-  //   let breakfastList = [];
-  //   let lunchList = [];
-  //   let dinnerList = [];
-  //   let dessertList = [];
-  //   let selectedFoods = this.state.selectedFoods;
-  //   for (let i = 0; i < selectedFoods.length; i++) {
-  //     if (this.state.didMount && selectedFoods[i].mealType === 'breakfast') {
-  //       breakfastList.push(selectedFoods[i]);
-  //       this.breakfastFoods(breakfastList);
-  //     } else if (this.state.didMount && selectedFoods[i].mealType === 'lunch') {
-  //       this.setState({
-  //         isLunch: true,
-  //         // filteredFoods: foodList
-  //       });
-  //       // lunchList.push(selectedFoods[i]);
-  //       // this.lunchFoods(lunchList);
-  //     } else if (this.state.didMount && selectedFoods[i].mealType === 'dinner') {
-  //       dinnerList.push(selectedFoods[i]);
-  //       this.dinnerFoods(dinnerList);
-  //     } else if (this.state.didMount && selectedFoods[i].mealType === 'dessert') {
-  //       dessertList.push(selectedFoods[i]);
-  //       this.dessertFoods(dessertList);
-  //     }
-  //   }
-  // }
 
   breakfastFoods(foodList) {
     this.setState({
@@ -121,7 +90,6 @@ class MealList extends React.Component {
   }
 
   dinnerFoods(dinnerList) {
-    console.log(dinnerList);
     this.setState({
       isDinner: true,
       filteredFoods: dinnerList
@@ -146,7 +114,7 @@ class MealList extends React.Component {
   render() {
     return (
       <div id="food-list-container">
-        <h2>Food List</h2>
+        <h2 className="col-headers">Food List</h2>
         {this.state.filteredFoods.map((singleFood) => {
           return (
             <SingleFood

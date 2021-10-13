@@ -9,7 +9,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mealType: "none",
+      mealId: 0,
+      mealType: '',
       mealList: [],
       recipeList: [],
       submitted: false,
@@ -18,6 +19,7 @@ class App extends React.Component {
     };
     this.handleMealTypeChange = this.handleMealTypeChange.bind(this);
     this.handleMealTypeSubmit = this.handleMealTypeSubmit.bind(this);
+    this.getMealId = this.getMealId.bind(this);
   }
 
   componentDidMount() {
@@ -47,6 +49,10 @@ class App extends React.Component {
     });
   };
 
+  getMealId() {
+    return this.state.mealId += 1;
+  }
+
   // let newFoodItem = {
   //   meal: this.state.mealType,
   //   list: this.state.foodList
@@ -61,30 +67,38 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="meal-planner-container">
-        <div id="meal-planner-types">
-          <MealTypes
-            mealType={this.state.mealType}
-            handleChange={this.handleMealTypeChange}
-            handleSubmit={this.handleMealTypeSubmit}
-          />
-          {this.state.submitted && (
-            <div className="meal-planner-choice">
-              {this.state.mealType} is a great choice!
+      <div id="meal-planner-wrapper">
+        <div id="meal-planner-container">
+          <div id="meal-planner-types">
+            <MealTypes
+              mealType={this.state.mealType}
+              handleChange={this.handleMealTypeChange}
+              handleSubmit={this.handleMealTypeSubmit}
+            />
+            {(this.state.submitted && this.state.mealType !== '' && this.state.mealType !== 'none') && (
+              <div className="meal-planner-choice">
+                {this.state.mealType} is a great choice!
+              </div>
+            )}
+          </div>
+          {(this.state.didMount) && (
+            <div id="meal-planner-meal-list">
+              <MealList
+                mealId={this.getMealId()}
+                didMount={this.state.didMount}
+                foodsList={this.state.selectedFoods}
+                mealType={this.state.mealType}
+              />
             </div>
           )}
-        </div>
-        {(this.state.submitted && this.state.didMount) && (
-          <div id="meal-planner-meal-list">
-            <MealList
-              didMount={this.state.didMount}
-              foodsList={this.state.selectedFoods}
-              mealType={this.state.mealType}
-            />
+          <div id="meal-planner-recipe-list">
+            <RecipeList mealList={this.state.mealList} />
           </div>
-        )}
-        <div id="meal-planner-recipe-list">
-          <RecipeList mealList={this.state.mealList} />
+        </div>
+        <div id="save-meal-plan">
+          <button className="save-meal-plan-btn" type="submit">
+            SAVE MEAL PLAN
+          </button>
         </div>
       </div>
     );

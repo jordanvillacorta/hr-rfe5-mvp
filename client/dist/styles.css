@@ -1,4 +1,17 @@
+body {
+  background-color: #FE9A2E;
+}
+
+* Headers */
+.col-headers {
+  text-align: center;
+}
+
 /* App */
+/* #meal-planner-wrapper {
+  background-color: #DF7401;
+} */
+
 #meal-planner-container {
   display: flex;
   justify-content: center;
@@ -6,7 +19,9 @@
 
 #meal-planner-container > div {
   margin: 10px;
-  background-color: lightgrey;
+  /* background-color: #F4BB44; */
+  background-color: #FFDB58;
+  border: 1px solid white;
 }
 
 #meal-planner-title {
@@ -15,39 +30,76 @@
 }
 
 #meal-planner-types {
-  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFCC;
+  color: black;
   height: 200px;
   width: 500px;
-  border: 1px solid black;
+  /* border: 1px solid yellow; */
 }
 
 #meal-planner-meal-list {
+  display: flex;
+  justify-content: center;
   background-color: lightgrey;
   width: 600px;
+  /* border: 1px solid yellow; */
 }
 
 #meal-planner-recipe-list {
+  display: flex;
+  justify-content: center;
   background-color: lightgrey;
   width: 500px;
-  border: 1px solid black;
+  /* border: 1px solid yellow; */
 }
 
+#save-meal-plan {
+  display: flex;
+  justify-content: center;
+}
+
+.save-meal-plan-btn {
+  background-color: white;
+  padding: 5px;
+}
 
 /* Meal Types */
+#meal-selection-button {
+  background-color: white;
+  padding: 5px;
+}
 
 /* Meal List */
 #food-list-container {
-  border: 1px solid black;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 /* Single Food */
 #single-food-item {
-  padding-bottom: 5px;
-  border: 1px solid black;
+  padding: 8px;
+  /* border: 1px solid black; */
+  border-bottom: 1px solid white;
+  margin-bottom: 15px;
+}
+
+.single-food-item-name {
+  padding: 8px;
+  font-size: 20px;
+}
+
+#single-food-image {
+  padding-bottom: 8px;
 }
 
 .image-url {
-  height: 40%;
-  width: 24%;
+  height: 60%;
+  width: 40%;
   object-fit: fill;
+}
+
+.submit-btn {
+  padding: 5px;
 }

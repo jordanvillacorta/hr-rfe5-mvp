@@ -13,20 +13,27 @@ class SingleFood extends React.Component {
     };
   }
 
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.key !== prevProps.key) {
+  //     this.setState({
+  //       isDessert: true
+  //     })
+  //   }
+  //  }
+
   render() {
     return (
       <div id="single-food-item">
         <div className="single-food-item-name">
-          Name:
-            <div id="breakfast-food-item">{this.props.singleFood.name}</div>
+          Name: {this.props.singleFood.name}
         </div>
         <div className="single-food-item-imageURL">
-          Image:
-          <div id="breakfast-food-item">
+          {/* Image: */}
+          <div id="single-food-image">
             <img src={this.props.singleFood.imageURL} className="image-url" />
           </div>
         </div>
-        <form id="breakfast-food-select-btn" onClick={this.props.handleCurrentFood}>
+        <form id="single-food-select-btn" onClick={this.props.handleCurrentFood}>
           <button className="submit-btn" type="submit" value={this.props.singleFood}>
             Select!
           </button>

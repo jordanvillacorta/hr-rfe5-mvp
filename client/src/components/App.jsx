@@ -3,7 +3,7 @@ import axios from "axios";
 import MealTypes from "./MealTypes.jsx";
 import MealList from "./MealList.jsx";
 import RecipeList from "./RecipeList.jsx";
-import '../../dist/styles.css';
+import "../../dist/styles.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,9 +13,25 @@ class App extends React.Component {
       mealList: [],
       recipeList: [],
       submitted: false,
+      selectedFoods: [],
+      didMount: false,
     };
     this.handleMealTypeChange = this.handleMealTypeChange.bind(this);
     this.handleMealTypeSubmit = this.handleMealTypeSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get("/meals")
+      .then((response) => {
+        this.setState({
+          selectedFoods: response.data,
+          didMount: true,
+        });
+        // this.foodSpecificList();
+      })
+      .catch((err) => {
+        console.log("Error with rendering page:", err);
+      });
   }
 
   handleMealTypeChange = (e) => {
@@ -59,10 +75,14 @@ class App extends React.Component {
             </div>
           )}
         </div>
-        {(this.state.submitted && this.state.mealType !== "none") && (
-        <div id="meal-planner-meal-list">
-          <MealList mealType={this.state.mealType} />
-        </div>)}
+        {(this.state.submitted && this.state.didMount) && (
+          <div id="meal-planner-meal-list">
+            <MealList
+              foodsList={this.state.selectedFoods}
+              mealType={this.state.mealType}
+            />
+          </div>
+        )}
         <div id="meal-planner-recipe-list">
           <RecipeList mealList={this.state.mealList} />
         </div>

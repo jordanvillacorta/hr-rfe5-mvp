@@ -12,6 +12,7 @@ class App extends React.Component {
       mealId: 0,
       mealType: '',
       mealList: [],
+      currentFoodItem: '',
       recipeList: [],
       submitted: false,
       selectedFoods: [],
@@ -20,10 +21,12 @@ class App extends React.Component {
     this.handleMealTypeChange = this.handleMealTypeChange.bind(this);
     this.handleMealTypeSubmit = this.handleMealTypeSubmit.bind(this);
     this.getMealId = this.getMealId.bind(this);
+    this.handleCurrentFoodItem = this.handleCurrentFoodItem.bind(this);
+    // this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
   }
 
   componentDidMount() {
-    axios.get("/meals")
+    axios.get('/meals')
       .then((response) => {
         this.setState({
           selectedFoods: response.data,
@@ -49,21 +52,18 @@ class App extends React.Component {
     });
   };
 
+  handleCurrentFoodItem = (e) => {
+    e.preventDefault();
+    let newFoodItem = e.target.value;
+    this.setState({
+      currentFoodItem: [newFoodItem],
+      recipeList: this.state.recipeList.concat([newFoodItem])
+    })
+  }
+
   getMealId() {
     return this.state.mealId += 1;
   }
-
-  // let newFoodItem = {
-  //   meal: this.state.mealType,
-  //   list: this.state.foodList
-  // };
-  // axios.post('/meals', newFoodItem)
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     })
 
   render() {
     return (
@@ -88,12 +88,16 @@ class App extends React.Component {
                 didMount={this.state.didMount}
                 foodsList={this.state.selectedFoods}
                 mealType={this.state.mealType}
+                handleCurrentFood={this.handleCurrentFoodItem}
+                // handleRecipeSubmit={this.handleRecipeSubmit}
               />
             </div>
           )}
+          {(this.state.didMount) && (
           <div id="meal-planner-recipe-list">
-            <RecipeList mealList={this.state.mealList} />
+            <RecipeList recipeList={this.state.recipeList} />
           </div>
+          )}
         </div>
         <div id="save-meal-plan">
           <button className="save-meal-plan-btn" type="submit">

@@ -3,6 +3,7 @@ import axios from "axios";
 import SingleFood from './SingleFood.jsx';
 import mealData from '../mealData.json';
 import '../../dist/styles.css';
+import RecipeList from './RecipeList.jsx';
 
 class MealList extends React.Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class MealList extends React.Component {
       filteredFoods: [],
       keyIndex: 0,
       currentFoodItem: '',
-      recipeList: [],
       didMount: this.props.didMount
     }
     this.getKey = this.getKey.bind(this);
@@ -26,7 +26,8 @@ class MealList extends React.Component {
     this.lunchFoods = this.lunchFoods.bind(this);
     this.dinnerFoods = this.dinnerFoods.bind(this);
     this.dessertFoods = this.dessertFoods.bind(this);
-    this.handleCurrentFoodItem = this.handleCurrentFoodItem.bind(this);
+    // this.handleCurrentFoodItem = this.handleCurrentFoodItem.bind(this);
+    // this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -103,13 +104,13 @@ class MealList extends React.Component {
     });
   }
 
-  handleCurrentFoodItem = (e) => {
-    e.preventDefault();
-    // console.log(e.target, 'clicked!')
-    this.setState({
-      currentFoodItem: e.target.value
-    })
-  }
+  // handleCurrentFoodItem = (e) => {
+  //   e.preventDefault();
+  //   // console.log(e.target, 'clicked!')
+  //   this.setState({
+  //     currentFoodItem: e.target.value
+  //   })
+  // }
 
   render() {
     return (
@@ -121,7 +122,8 @@ class MealList extends React.Component {
               key={this.getKey()}
               mealType={this.state.mealType}
               singleFood={singleFood}
-              handleCurrentFood={this.handleCurrentFoodItem}
+              handleCurrentFood={this.props.handleCurrentFood}
+              handleRecipeSubmit={this.props.handleRecipeSubmit}
             />
           )
         })}

@@ -1,25 +1,14 @@
 import React from "react";
+import axios from "axios";
 import "../../dist/styles.css";
 
 class SingleFood extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mealType: this.props.mealType,
-      isBreakfast: false,
-      isLunch: false,
-      isDinner: false,
-      isDessert: false
+      mealType: this.props.mealType
     };
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.key !== prevProps.key) {
-  //     this.setState({
-  //       isDessert: true
-  //     })
-  //   }
-  //  }
 
   render() {
     return (
@@ -33,7 +22,7 @@ class SingleFood extends React.Component {
           </div>
         </div>
         <form id="single-food-select-btn" onClick={this.props.handleCurrentFood}>
-          <button className="submit-btn" type="submit" value={this.props.singleFood}>
+          <button className="submit-btn" type="submit" value={this.props.singleFood.name}>
             Select!
           </button>
         </form>

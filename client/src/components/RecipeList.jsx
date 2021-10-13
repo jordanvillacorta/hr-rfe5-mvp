@@ -5,15 +5,17 @@ class RecipeList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipeList: []
+      recipeList: this.props.recipeList
     };
   }
 
   render() {
+    let recipeList = this.props.recipeList;
+    console.log(recipeList);
     return (
       <div>
         <h2 className="col-headers">Recipe List</h2>
-        {this.state.recipeList}
+        {recipeList}
       </div>
     );
   }

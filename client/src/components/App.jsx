@@ -17,12 +17,13 @@ class App extends React.Component {
       submitted: false,
       selectedFoods: [],
       didMount: false,
+      saveMeal: false
     };
     this.handleMealTypeChange = this.handleMealTypeChange.bind(this);
     this.handleMealTypeSubmit = this.handleMealTypeSubmit.bind(this);
-    this.getMealId = this.getMealId.bind(this);
     this.handleCurrentFoodItem = this.handleCurrentFoodItem.bind(this);
-    // this.handleRecipeSubmit = this.handleRecipeSubmit.bind(this);
+    this.handleSaveMealClick = this.handleSaveMealClick.bind(this);
+    this.getMealId = this.getMealId.bind(this);
   }
 
   componentDidMount() {
@@ -58,6 +59,13 @@ class App extends React.Component {
     this.setState({
       currentFoodItem: [newFoodItem],
       recipeList: this.state.recipeList.concat([newFoodItem])
+    })
+  }
+
+  handleSaveMealClick = (e) => {
+    e.preventDefault();
+    this.setState({
+      saveMeal: true
     })
   }
 
@@ -100,9 +108,17 @@ class App extends React.Component {
           )}
         </div>
         <div id="save-meal-plan">
-          <button className="save-meal-plan-btn" type="submit">
+          <button className="save-meal-plan-btn" type="submit" onClick={this.handleSaveMealClick} >
             SAVE MEAL PLAN
           </button>
+        </div>
+        <br></br>
+        <div>
+          {this.state.saveMeal && (
+            <div id="saved-meal-plan">
+              You saved your meal plan!
+            </div>
+          )}
         </div>
       </div>
     );

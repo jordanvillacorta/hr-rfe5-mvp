@@ -104,14 +104,6 @@ class MealList extends React.Component {
     });
   }
 
-  // handleCurrentFoodItem = (e) => {
-  //   e.preventDefault();
-  //   // console.log(e.target, 'clicked!')
-  //   this.setState({
-  //     currentFoodItem: e.target.value
-  //   })
-  // }
-
   render() {
     return (
       <div id="food-list-container">

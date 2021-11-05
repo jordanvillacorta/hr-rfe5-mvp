@@ -9,7 +9,7 @@
 - [Jordan Villacorta](https://github.com/jordanvillacorta) - [LinkedIn](https://www.linkedin.com/in/jordan-villacorta/)
 
 ## Description
-Project Meal Planner
+Meal Planner
 
 ## Tech Stack
 

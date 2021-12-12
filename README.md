@@ -9,7 +9,7 @@
 - [Jordan Villacorta](https://github.com/jordanvillacorta) - [LinkedIn](https://www.linkedin.com/in/jordan-villacorta/)
 
 ## Description
-Meal Planner is a web application that allows the user to create a week's meal plan based on meal categories being: Breakfast, Lunch, Dinner, and Dessert. Each meal category consists of various food options that also include the ingredients & recipe for each respective meal.
+Meal Planner is a web application that allows the user to create a week's meal plan based on meal categories: Breakfast, Lunch, Dinner, and Dessert. Each meal category consists of various food options that also include the ingredients & recipe for each respective meal.
 
 ## Tech Stack
 

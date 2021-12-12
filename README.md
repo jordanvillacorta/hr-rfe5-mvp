@@ -53,4 +53,3 @@ Trello <img align="left" alt="Trello" width="30px" src="https://raw.githubuserco
 
 Slack <img align="left" alt="Slack" width="30px" src="https://github.com/devicons/devicon/blob/master/icons/slack/slack-original.svg" />
 <br />
-<br />

@@ -1,9 +1,12 @@
 body {
   background-color: #FE9A2E;
+  font-family: 'Nova Round', cursive;
 }
 
-* Headers */
+/* Headers */
 .col-headers {
+  /* display: flex;
+  justify-content: center; */
   text-align: center;
 }
 
@@ -22,6 +25,7 @@ body {
   /* background-color: #F4BB44; */
   background-color: #FFDB58;
   border: 1px solid white;
+  border-radius: 10px;
 }
 
 #meal-planner-title {
@@ -61,12 +65,24 @@ body {
 }
 
 .save-meal-plan-btn {
+  border-radius: 10px;
   background-color: white;
   padding: 5px;
 }
 
 /* Meal Types */
+.pick-your-meal {
+  font-size: 20px;
+  text-align: center;
+}
+
+.select-option {
+  font-size: 20px;
+}
+
 #meal-selection-button {
+  font-size: 18px;
+  border-radius: 10px;
   background-color: white;
   padding: 5px;
 }
@@ -102,4 +118,31 @@ body {
 
 .submit-btn {
   padding: 5px;
+  border-radius: 10px;
+}
+
+/* Single Recipe */
+#recipe-list-container {
+  text-align: center;
+}
+
+#single-recipe-item {
+  padding: 8px;
+  /* border: 1px solid black; */
+  border-bottom: 1px solid white;
+  margin-bottom: 15px;
+}
+
+.single-recipe-item-name {
+  padding: 8px;
+  font-size: 20px;
+}
+
+#single-recipe-image {
+  padding-bottom: 8px;
+}
+
+#saved-meal-plan {
+  font-size: 20px;
+  text-align: center;
 }

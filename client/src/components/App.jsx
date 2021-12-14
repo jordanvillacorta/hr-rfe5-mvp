@@ -72,14 +72,14 @@ import "../../dist/styles.css";
     });
   };
 
-  handleMealTypeSubmit = (e) => {
+  const handleMealTypeSubmit = (e) => {
     e.preventDefault();
     this.setState({
       submitted: true,
     });
   };
 
-  handleCurrentFoodItem = (e) => {
+  const handleCurrentFoodItem = (e) => {
     e.preventDefault();
     let newFoodItem = e.target.value;
     this.setState({
@@ -88,14 +88,14 @@ import "../../dist/styles.css";
     })
   }
 
-  handleSaveMealClick = (e) => {
+  const handleSaveMealClick = (e) => {
     e.preventDefault();
     this.setState({
       saveMeal: true
     })
   }
 
-  getMealId() {
+  const getMealId = () => {
     return this.state.mealId += 1;
   }
 

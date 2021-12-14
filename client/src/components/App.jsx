@@ -5,41 +5,6 @@ import MealList from "./MealList.jsx";
 import RecipeList from "./RecipeList.jsx";
 import "../../dist/styles.css";
 
-
-// class App extends React.Component {
-  //   constructor(props) {
-    //     super(props);
-    //     this.state = {
-      //       mealId: 0,
-      //       mealType: '',
-      //       mealList: [],
-      //       currentFoodItem: '',
-      //       recipeList: [],
-      //       submitted: false,
-      //       selectedFoods: [],
-      //       didMount: false,
-      //       saveMeal: false
-      //     };
-      //     this.handleMealTypeChange = this.handleMealTypeChange.bind(this);
-      //     this.handleMealTypeSubmit = this.handleMealTypeSubmit.bind(this);
-      //     this.handleCurrentFoodItem = this.handleCurrentFoodItem.bind(this);
-      //     this.handleSaveMealClick = this.handleSaveMealClick.bind(this);
-      //     this.getMealId = this.getMealId.bind(this);
-      //   }
-
-      // componentDidMount() {
-      //   axios.get('/meals')
-      //     .then((response) => {
-      //       this.setState({
-      //         selectedFoods: response.data,
-      //         didMount: true,
-      //       });
-      //     })
-      //     .catch((err) => {
-      //       console.log("Error with rendering page:", err);
-      //     });
-      // }
-
   const App = () => {
     const [mealId, setMealId] = useState(0);
     const [mealType, setMealType] = useState('');

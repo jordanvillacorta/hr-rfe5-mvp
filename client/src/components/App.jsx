@@ -102,7 +102,7 @@ import "../../dist/styles.css";
   }
 
   const getMealId = () => {
-    return setMealId(mealId + 1);
+    // return setMealId(mealId + 1);
     // return this.state.mealId += 1;
   }
 
@@ -121,7 +121,7 @@ import "../../dist/styles.css";
             </div>
           )}
         </div>
-        {(didMount) && (
+        {didMount && (
           <div id="meal-planner-meal-list">
             <MealList
               mealId={getMealId()}
@@ -132,7 +132,7 @@ import "../../dist/styles.css";
             />
           </div>
         )}
-        {(didMount) && (
+        {didMount && (
         <div id="meal-planner-recipe-list">
           <RecipeList
             recipeList={recipeList}

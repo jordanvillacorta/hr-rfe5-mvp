@@ -62,7 +62,7 @@ import "../../dist/styles.css";
           // });
         })
         .catch((err) => {
-          console.log("Error with rendering page:", err);
+          console.error("Error with rendering page:", err);
         });
     }, []);
 
@@ -102,7 +102,7 @@ import "../../dist/styles.css";
   }
 
   const getMealId = () => {
-    return setMealId(mealId += 1);
+    return setMealId(mealId + 1);
     // return this.state.mealId += 1;
   }
 
@@ -129,24 +129,25 @@ import "../../dist/styles.css";
               foodsList={selectedFoods}
               mealType={mealType}
               handleCurrentFood={handleCurrentFoodItem}
-              // handleRecipeSubmit={this.handleRecipeSubmit}
             />
           </div>
         )}
-        {(this.state.didMount) && (
+        {(didMount) && (
         <div id="meal-planner-recipe-list">
-          <RecipeList recipeList={this.state.recipeList} />
+          <RecipeList
+            recipeList={recipeList}
+          />
         </div>
         )}
       </div>
       <div id="save-meal-plan">
-        <button className="save-meal-plan-btn" type="submit" onClick={this.handleSaveMealClick} >
+        <button className="save-meal-plan-btn" type="submit" onClick={handleSaveMealClick} >
           SAVE MEAL PLAN
         </button>
       </div>
       <br></br>
       <div>
-        {this.state.saveMeal && (
+        {saveMeal && (
           <div id="saved-meal-plan">
             You saved your meal plan!
           </div>

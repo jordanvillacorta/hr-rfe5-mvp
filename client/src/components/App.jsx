@@ -115,20 +115,20 @@ import "../../dist/styles.css";
             handleChange={handleMealTypeChange}
             handleSubmit={handleMealTypeSubmit}
           />
-          {(this.state.submitted && this.state.mealType !== '' && this.state.mealType !== 'none') && (
+          {(submitted && mealType !== '' && mealType !== 'none') && (
             <div className="meal-planner-choice">
-              {this.state.mealType} is a great choice!
+              {mealType} is a great choice!
             </div>
           )}
         </div>
-        {(this.state.didMount) && (
+        {(didMount) && (
           <div id="meal-planner-meal-list">
             <MealList
-              mealId={this.getMealId()}
-              didMount={this.state.didMount}
-              foodsList={this.state.selectedFoods}
-              mealType={this.state.mealType}
-              handleCurrentFood={this.handleCurrentFoodItem}
+              mealId={getMealId()}
+              didMount={didMount}
+              foodsList={selectedFoods}
+              mealType={mealType}
+              handleCurrentFood={handleCurrentFoodItem}
               // handleRecipeSubmit={this.handleRecipeSubmit}
             />
           </div>

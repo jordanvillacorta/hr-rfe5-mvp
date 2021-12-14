@@ -27,6 +27,19 @@ import "../../dist/styles.css";
       //     this.getMealId = this.getMealId.bind(this);
       //   }
 
+      // componentDidMount() {
+      //   axios.get('/meals')
+      //     .then((response) => {
+      //       this.setState({
+      //         selectedFoods: response.data,
+      //         didMount: true,
+      //       });
+      //     })
+      //     .catch((err) => {
+      //       console.log("Error with rendering page:", err);
+      //     });
+      // }
+
   const App = () => {
     const [mealId, setMealId] = useState(0);
     const [mealType, setMealType] = useState('');
@@ -41,29 +54,17 @@ import "../../dist/styles.css";
     useEffect(() => {
       axios.get('/meals')
         .then((response) => {
-          this.setState({
-            selectedFoods: response.data,
-            didMount: true,
-          });
+          setSelectedFoods(response.data);
+          setDidMount(true);
+          // this.setState({
+          //   selectedFoods: response.data,
+          //   didMount: true,
+          // });
         })
         .catch((err) => {
           console.log("Error with rendering page:", err);
         });
     }, []);
-
-
-  // componentDidMount() {
-  //   axios.get('/meals')
-  //     .then((response) => {
-  //       this.setState({
-  //         selectedFoods: response.data,
-  //         didMount: true,
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log("Error with rendering page:", err);
-  //     });
-  // }
 
   const handleMealTypeChange = (e) => {
     let newMealType = e.target.value;

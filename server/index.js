@@ -12,7 +12,19 @@ app.get('/meals', (req, res) => {
   res.send(mealData)
 })
 
-app.post('/meals', function (req, res) {
+app.get('/recipes', (req, res) => {
+  // console.log(mealData.data);
+  res.send(mealData)
+})
+
+app.post('/recipes', (req, res) => {
+  // findRsvpAndUpdate(req.body, (err, data) => {
+  //   if (err) {
+  //     res.sendStatus(400);
+  //   } else {
+  //     res.json(data);
+  //   }
+  // })
   res.send(req.body)
 })
 

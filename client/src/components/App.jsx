@@ -56,10 +56,6 @@ import "../../dist/styles.css";
         .then((response) => {
           setSelectedFoods(response.data);
           setDidMount(true);
-          // this.setState({
-          //   selectedFoods: response.data,
-          //   didMount: true,
-          // });
         })
         .catch((err) => {
           console.error("Error with rendering page:", err);
@@ -69,17 +65,11 @@ import "../../dist/styles.css";
   const handleMealTypeChange = (e) => {
     let newMealType = e.target.value;
     setMealType(newMealType);
-    // this.setState({
-    //   mealType: newMealType,
-    // });
   };
 
   const handleMealTypeSubmit = (e) => {
     e.preventDefault();
     isSubmitted(true);
-    // this.setState({
-    //   submitted: true,
-    // });
   };
 
   const handleCurrentFoodItem = (e) => {
@@ -87,23 +77,15 @@ import "../../dist/styles.css";
     let newFoodItem = e.target.value;
     setCurrentFoodItem([newFoodItem]);
     setRecipeList(recipeList.concat([newFoodItem]));
-    // this.setState({
-    //   currentFoodItem: [newFoodItem],
-    //   recipeList: this.state.recipeList.concat([newFoodItem])
-    // })
   }
 
   const handleSaveMealClick = (e) => {
     e.preventDefault();
     setSaveMeal(true);
-    // this.setState({
-    //   saveMeal: true
-    // })
   }
 
   const getMealId = () => {
     // return setMealId(mealId + 1);
-    // return this.state.mealId += 1;
   }
 
   return (

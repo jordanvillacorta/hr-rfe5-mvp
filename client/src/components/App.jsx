@@ -111,9 +111,9 @@ import "../../dist/styles.css";
       <div id="meal-planner-container">
         <div id="meal-planner-types">
           <MealTypes
-            mealType={this.state.mealType}
-            handleChange={this.handleMealTypeChange}
-            handleSubmit={this.handleMealTypeSubmit}
+            mealType={mealType}
+            handleChange={handleMealTypeChange}
+            handleSubmit={handleMealTypeSubmit}
           />
           {(this.state.submitted && this.state.mealType !== '' && this.state.mealType !== 'none') && (
             <div className="meal-planner-choice">

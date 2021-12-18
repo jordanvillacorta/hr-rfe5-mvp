@@ -6,7 +6,21 @@ import SingleRecipe from "./SingleRecipe.jsx";
 //   const [foodList, setFoodList] = useState([]);
 //   const [formattedRecipes, setFormattedRecipes] = useState([]);
 //   const [didListMount, setDidListMount] = useState(false);
+
+//   useEffect(() => {
+//     axios.get('/meals')
+//       .then((response) => {
+//         setFoodList(response.data);
+//         setDidListMount(true);
+//         formatData();
+//       })
+//       .catch((err) => {
+//         console.error("Error with rendering page:", err);
+//       });
+//   }, []);
+
 // }
+
 
 class RecipeList extends React.Component {
   constructor(props) {

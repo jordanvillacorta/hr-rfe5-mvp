@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import SingleRecipe from "./SingleRecipe.jsx";
+
+// const RecipeList2 = ({ recipeList }) => {
+//   const [foodList, setFoodList] = useState([]);
+//   const [formattedRecipes, setFormattedRecipes] = useState([]);
+//   const [didListMount, setDidListMount] = useState(false);
+// }
 
 class RecipeList extends React.Component {
   constructor(props) {

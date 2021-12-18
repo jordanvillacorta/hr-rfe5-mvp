@@ -56,18 +56,20 @@ import "../../dist/styles.css";
   return (
     <div id="meal-planner-wrapper">
       <div id="meal-planner-container">
-        <div id="meal-planner-types">
-          <MealTypes
-            mealType={mealType}
-            handleChange={handleMealTypeChange}
-            handleSubmit={handleMealTypeSubmit}
-          />
-          {(submitted && mealType !== '' && mealType !== 'none') && (
-            <div className="meal-planner-choice">
-              {mealType} is a great choice!
-            </div>
-          )}
-        </div>
+        {didMount && (
+          <div id="meal-planner-types">
+            <MealTypes
+              mealType={mealType}
+              handleChange={handleMealTypeChange}
+              handleSubmit={handleMealTypeSubmit}
+            />
+            {(submitted && mealType !== '' && mealType !== 'none') && (
+              <div className="meal-planner-choice">
+                {mealType} is a great choice!
+              </div>
+            )}
+          </div>
+        )}
         {didMount && (
           <div id="meal-planner-meal-list">
             <MealList
@@ -94,11 +96,11 @@ import "../../dist/styles.css";
       </div>
       <br></br>
       <div>
-        {saveMeal && (
-          <div id="saved-meal-plan">
-            You saved your meal plan!
-          </div>
-        )}
+      {saveMeal && (
+        <div id="saved-meal-plan">
+          You saved your meal plan!
+        </div>
+      )}
       </div>
     </div>
   );

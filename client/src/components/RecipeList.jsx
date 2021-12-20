@@ -19,6 +19,20 @@ import SingleRecipe from "./SingleRecipe.jsx";
 //       });
 //   }, []);
 
+  const formatData = () => {
+    // let foodList = this.state.foodList;
+    let names = foodList.map((singleFood) => {
+      return ({
+          name: singleFood.name,
+          ingredients: singleFood.ingredients,
+          steps: singleFood.steps
+        })
+      })
+      setFormattedRecipes(names);
+      // this.setState({
+      //   formattedRecipes: names
+      // })
+  }
 // }
 
 

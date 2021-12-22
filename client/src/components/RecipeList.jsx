@@ -33,6 +33,21 @@ const RecipeList = ({ recipeList }) => {
       //   formattedRecipes: names
       // })
   }
+
+  const test = () => {
+    // let recipeList = this.props.recipeList;
+    // let formattedRecipes = this.state.formattedRecipes;
+    for (let i = 0; i < recipeList.length; i++) {
+      console.log('formatted', formattedRecipes[j])
+      for (let j = 0; j < formattedRecipes.length; j++) {
+        console.log(formattedRecipes[j]);
+        // if (recipeList[i] === formattedRecipes[j]) {
+        // }
+      }
+    }
+  }
+
+
 }
 
 
@@ -79,17 +94,7 @@ const RecipeList = ({ recipeList }) => {
 //       })
 //   }
 
-  // test = () => {
-  //   let recipeList = this.props.recipeList;
-  //   let formattedRecipes = this.state.formattedRecipes;
-  //   for (let i = 0; i < recipeList.length; i++) {
-  //     console.log('formatted', formattedRecipes[j])
-  //     for (let j = 0; j < formattedRecipes.length; j++) {
-  //       // if (recipeList[i] === formattedRecipes[j]) {
-  //       // }
-  //     }
-  //   }
-  // }
+
 
   // render() {
   //   let formattedRecipes = this.state.formattedRecipes;

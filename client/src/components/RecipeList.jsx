@@ -47,7 +47,20 @@ const RecipeList = ({ recipeList }) => {
     }
   }
 
-
+  return (
+    <div id="recipe-list-container">
+      <h2 className="col-headers">Recipe List</h2>
+      {recipeList.map((singleRecipe) => {
+        console.log('singleRecipe', singleRecipe)
+        return (
+          <SingleRecipe
+            singleRecipe={singleRecipe}
+            // formattedRecipes={formattedRecipes}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 

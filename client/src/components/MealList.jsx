@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import SingleFood from './SingleFood.jsx';
 import mealData from '../mealData.json';
 import '../../dist/styles.css';
 import RecipeList from './RecipeList.jsx';
+
+const MealList2 = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, handleRecipeSubmit }) => {
+  // mealId = useState(this.props.mealId);
+  // mealType = useState(this.props.mealType);
+  [isBreakfast, setBreakfast] = useState(false);
+  [isLunch, setLunch] = useState(false);
+  [isDinner, setDinner] = useState(false);
+  [isDessert, setDessert] = useState(false);
+  // [selectedFoods, setSelectedFoods] = useState(this.props.foodsList);
+  [filteredFoods, setFilteredFoods] = useState([]);
+  [keyIndex, setKeyIndex] = useState(0);
+  [currentFoodItem, setCurrentFoodItem] = useState('');
+  // didMount = useState(this.props.didMount);
+
+  // return (
+
+  // );
+}
 
 class MealList extends React.Component {
   constructor(props) {

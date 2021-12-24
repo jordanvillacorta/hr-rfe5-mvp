@@ -18,6 +18,38 @@ const MealList2 = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, h
   [currentFoodItem, setCurrentFoodItem] = useState('');
   // didMount = useState(this.props.didMount);
 
+  const getKey = () => {
+    return this.state.keyIndex += 1;
+  }
+
+  const breakfastFoods = (foodList) => {
+    this.setState({
+      isBreakfast: true,
+      filteredFoods: foodList
+    });
+  }
+
+  const lunchFoods = (foodList) => {
+    this.setState({
+      isLunch: true,
+      filteredFoods: foodList
+    });
+  }
+
+  const dinnerFoods = (dinnerList) => {
+    this.setState({
+      isDinner: true,
+      filteredFoods: dinnerList
+    });
+  }
+
+  const dessertFoods = (foodList) => {
+    this.setState({
+      isDessert: true,
+      filteredFoods: foodList
+    });
+  }
+
   // return (
 
   // );

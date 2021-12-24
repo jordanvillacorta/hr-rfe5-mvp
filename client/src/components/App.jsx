@@ -50,7 +50,7 @@ import "../../dist/styles.css";
   }
 
   const getMealId = () => {
-    // return setMealId(mealId + 1);
+    setMealId(mealId + 1);
   }
 
   return (
@@ -73,7 +73,7 @@ import "../../dist/styles.css";
         {didMount && (
           <div id="meal-planner-meal-list">
             <MealList
-              mealId={getMealId()}
+              mealId={getMealId}
               didMount={didMount}
               foodsList={selectedFoods}
               mealType={mealType}

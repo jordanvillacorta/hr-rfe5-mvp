@@ -5,7 +5,7 @@ import mealData from '../mealData.json';
 import '../../dist/styles.css';
 import RecipeList from './RecipeList.jsx';
 
-const MealList2 = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, handleRecipeSubmit }) => {
+const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, handleRecipeSubmit }) => {
   // const mealId = useState(this.props.mealId);
   // const mealType = useState(this.props.mealType);
   const [isBreakfast, setBreakfast] = useState(false);
@@ -19,14 +19,16 @@ const MealList2 = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, h
   // const didMount = useState(this.props.didMount);
 
   const getKey = () => {
-    return this.state.keyIndex += 1;
+    setKeyIndex(keyIndex + 1);
   }
 
   const breakfastFoods = (foodList) => {
-    this.setState({
-      isBreakfast: true,
-      filteredFoods: foodList
-    });
+    setBreakfast(true);
+    setFilteredFoods(foodList);
+    // this.setState({
+    //   isBreakfast: true,
+    //   filteredFoods: foodList
+    // });
   }
 
   const lunchFoods = (foodList) => {
@@ -55,7 +57,7 @@ const MealList2 = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, h
   // );
 }
 
-class MealList extends React.Component {
+class MealList2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

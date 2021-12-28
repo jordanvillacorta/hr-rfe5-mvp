@@ -6,17 +6,17 @@ import '../../dist/styles.css';
 import RecipeList from './RecipeList.jsx';
 
 const MealList2 = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, handleRecipeSubmit }) => {
-  // mealId = useState(this.props.mealId);
-  // mealType = useState(this.props.mealType);
-  [isBreakfast, setBreakfast] = useState(false);
-  [isLunch, setLunch] = useState(false);
-  [isDinner, setDinner] = useState(false);
-  [isDessert, setDessert] = useState(false);
-  // [selectedFoods, setSelectedFoods] = useState(this.props.foodsList);
-  [filteredFoods, setFilteredFoods] = useState([]);
-  [keyIndex, setKeyIndex] = useState(0);
-  [currentFoodItem, setCurrentFoodItem] = useState('');
-  // didMount = useState(this.props.didMount);
+  // const mealId = useState(this.props.mealId);
+  // const mealType = useState(this.props.mealType);
+  const [isBreakfast, setBreakfast] = useState(false);
+  const [isLunch, setLunch] = useState(false);
+  const [isDinner, setDinner] = useState(false);
+  const [isDessert, setDessert] = useState(false);
+  // const [selectedFoods, setSelectedFoods] = useState(this.props.foodsList);
+  const [filteredFoods, setFilteredFoods] = useState([]);
+  const [keyIndex, setKeyIndex] = useState(0);
+  const [currentFoodItem, setCurrentFoodItem] = useState('');
+  // const didMount = useState(this.props.didMount);
 
   const getKey = () => {
     return this.state.keyIndex += 1;

@@ -18,6 +18,16 @@ const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, ha
   const [currentFoodItem, setCurrentFoodItem] = useState('');
   // const didMount = useState(this.props.didMount);
 
+  // Implement useEffect with this as helper function?
+  // if (this.props.mealType.toLowerCase() === 'breakfast') {
+  //   for (let i = 0; i < selectedFoods.length; i++) {
+  //     if (this.state.didMount && selectedFoods[i].mealType === 'breakfast') {
+  //       breakfastList.push(selectedFoods[i]);
+  //       this.breakfastFoods(breakfastList);
+  //     }
+  //   }
+  // }
+
   const getKey = () => {
     setKeyIndex(keyIndex + 1);
   }

@@ -62,9 +62,22 @@ const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, ha
     });
   }
 
-  // return (
-
-  // );
+  return (
+    <div id="food-list-container">
+      <h2 className="col-headers">Food List</h2>
+      {this.state.filteredFoods.map((singleFood) => {
+        return (
+          <SingleFood
+            key={this.getKey()}
+            mealType={this.state.mealType}
+            singleFood={singleFood}
+            handleCurrentFood={this.props.handleCurrentFood}
+            handleRecipeSubmit={this.props.handleRecipeSubmit}
+          />
+        )
+      })}
+    </div>
+  );
 }
 
 class MealList2 extends React.Component {

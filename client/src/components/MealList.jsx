@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import SingleFood from './SingleFood.jsx';
 import mealData from '../mealData.json';
 import '../../dist/styles.css';
@@ -18,7 +17,8 @@ const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, ha
   const [currentFoodItem, setCurrentFoodItem] = useState('');
   // const didMount = useState(this.props.didMount);
 
-  // Implement useEffect with this as helper function?
+  // Implement useEffect with this as helper function? Can I implement useRef here?
+
   // if (this.props.mealType.toLowerCase() === 'breakfast') {
   //   for (let i = 0; i < selectedFoods.length; i++) {
   //     if (this.state.didMount && selectedFoods[i].mealType === 'breakfast') {
@@ -33,6 +33,7 @@ const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, ha
   }
 
   const breakfastFoods = (foodList) => {
+    // Implement useEffect here instead of using setState?
     setBreakfast(true);
     setFilteredFoods(foodList);
     // this.setState({

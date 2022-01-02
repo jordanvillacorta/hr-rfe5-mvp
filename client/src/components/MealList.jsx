@@ -6,7 +6,7 @@ import RecipeList from './RecipeList.jsx';
 
 const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, handleRecipeSubmit }) => {
   const mealId = useState(this.props.mealId);
-  // const mealType = useState(this.props.mealType);
+  const mealType = useState(this.props.mealType);
   const [isBreakfast, setBreakfast] = useState(false);
   const [isLunch, setLunch] = useState(false);
   const [isDinner, setDinner] = useState(false);
@@ -23,6 +23,8 @@ const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, ha
   useEffect(() => {
     prevMealIdRef.current = mealId;
   });
+
+  // Implement custom hook to provide previous prop using useRef?
   const prevMealId = prevMealIdRef.current;
 
   // if (this.props.mealType.toLowerCase() === 'breakfast') {

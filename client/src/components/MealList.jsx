@@ -66,11 +66,11 @@ const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, ha
   return (
     <div id="food-list-container">
       <h2 className="col-headers">Food List</h2>
-      {this.state.filteredFoods.map((singleFood) => {
+      {filteredFoods.map((singleFood) => {
         return (
           <SingleFood
-            key={this.getKey()}
-            mealType={this.state.mealType}
+            key={getKey()}
+            mealType={mealType}
             singleFood={singleFood}
             handleCurrentFood={this.props.handleCurrentFood}
             handleRecipeSubmit={this.props.handleRecipeSubmit}

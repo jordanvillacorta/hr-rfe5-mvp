@@ -29,9 +29,6 @@ const RecipeList = ({ recipeList }) => {
         })
       })
       setFormattedRecipes(names);
-      // this.setState({
-      //   formattedRecipes: names
-      // })
   }
 
   const test = () => {

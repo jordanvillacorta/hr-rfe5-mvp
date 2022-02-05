@@ -44,10 +44,6 @@ const MealList = ({ mealId, mealType, foodsList, didMount, handleCurrentFood, ha
     // Implement useEffect here instead of using setState?
     setBreakfast(true);
     setFilteredFoods(foodList);
-    // this.setState({
-    //   isBreakfast: true,
-    //   filteredFoods: foodList
-    // });
   }
 
   const lunchFoods = (foodList) => {

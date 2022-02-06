@@ -6,7 +6,7 @@ class SingleFood extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mealType: this.props.mealType
+      mealType: this.props.mealType,
     };
   }
 
@@ -21,8 +21,15 @@ class SingleFood extends React.Component {
             <img src={this.props.singleFood.imageURL} className="image-url" />
           </div>
         </div>
-        <form id="single-food-select-btn" onClick={this.props.handleCurrentFood}>
-          <button className="submit-btn" type="submit" value={this.props.singleFood.name}>
+        <form
+          id="single-food-select-btn"
+          onClick={this.props.handleCurrentFood}
+        >
+          <button
+            className="submit-btn"
+            type="submit"
+            value={this.props.singleFood.name}
+          >
             Select!
           </button>
         </form>
